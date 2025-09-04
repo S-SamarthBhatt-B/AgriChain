@@ -37,5 +37,5 @@ It enables **farmers, distributors, retailers, and consumers** to interact throu
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/your-username/AgriChain.git
+git clone https://github.com/S-SamarthBhatt-B/AgriChain.git
 cd AgriChain
