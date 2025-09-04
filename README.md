@@ -1,9 +1,9 @@
 # 🌱 AgriChain – Blockchain-based Agricultural Supply Chain Management  
 
-![GitHub repo size](https://img.shields.io/github/repo-size/your-username/AgriChain?color=green)  
-![GitHub stars](https://img.shields.io/github/stars/your-username/AgriChain?style=social)  
-![GitHub forks](https://img.shields.io/github/forks/your-username/AgriChain?style=social)  
-![License](https://img.shields.io/badge/license-MIT-blue.svg)  
+![GitHub repo size](https://img.shields.io/github/repo-size/S-SamarthBhatt-B/AgriChain?color=green)  
+![GitHub stars](https://img.shields.io/github/stars/S-SamarthBhatt-B/AgriChain?style=social)  
+![GitHub forks](https://img.shields.io/github/forks/S-SamarthBhatt-B/AgriChain?style=social)  
+![GitHub license](https://img.shields.io/github/license/S-SamarthBhatt-B/AgriChain)  
 
 ---
 
