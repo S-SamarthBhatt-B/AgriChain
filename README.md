@@ -27,8 +27,9 @@ It enables **farmers, distributors, retailers, and consumers** to interact throu
 
 - **Backend:** Node.js + Express.js  
 - **Database:** MongoDB  
-- **Blockchain:** Ethereum / Hyperledger / Polygon  
-- **Frontend (Future Scope):** React.js / Angular  
+- **Blockchain:** Ethereum(Sepolia testnet), Solidity smart contracts using Hardhat, Ethers.js   
+- **Frontend (Future Scope):** React.js / Angular
+- **Deployment**– AWS 
 - **Others:** QR Code Integration, REST APIs  
 
 ---
