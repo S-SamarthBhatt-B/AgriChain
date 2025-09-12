@@ -10,14 +10,10 @@
 ## 📑 Table of Contents
 - [Overview](#-overview)
 - [Key Features](#-key-features)
+- - [Project Workflow](#-project-workflow)
 - [Tech Stack](#-tech-stack)
 - [Getting Started](#-getting-started)
-- [Project Workflow](#-project-workflow)
 - [Future Enhancements](#-future-enhancements)
-- [Contributors](#-contributors)
-- [Resources](#-resources)
-- [License](#-license)
-
 ---
 
 ## 📌 Overview  
@@ -36,6 +32,41 @@ It enables **farmers, distributors, retailers, and consumers** to interact throu
 
 ---
 
+## 🔗 Project Workflow  
+
+AgriChain ensures **end-to-end traceability and transparency** in the agricultural supply chain.  
+
+1. **Farmer Stage**  
+   - Farmer registers crops on the platform.  
+   - Uploads details like crop type, harvest date, certifications.  
+   - A unique entry is recorded on the blockchain.  
+
+2. **Distributor Stage**  
+   - Collects produce from farmers.  
+   - Updates storage, transport, and quality details.  
+   - Blockchain records logistics data to avoid tampering.  
+
+3. **Retailer Stage**  
+   - Retailers receive verified produce from distributors.  
+   - Products are assigned **QR codes** linked to blockchain entries.  
+   - Ensures only authentic goods reach consumers.  
+
+4. **Consumer Stage**  
+   - Consumers scan the **QR code** on purchased items.  
+   - Instantly view product origin, journey, pricing, and certifications.  
+   - Builds trust by verifying authenticity before purchase.  
+
+---
+
+### 📊 Visual Workflow  
+
+```mermaid
+flowchart LR
+    A[👩‍🌾 Farmer<br/>Registers Produce] --> B[🚚 Distributor<br/>Storage & Transport]
+    B --> C[🏬 Retailer<br/>Sells Verified Produce]
+    C --> D[🛒 Consumer<br/>Scans QR & Verifies]
+```
+
 ## 🏗️ Tech Stack  
 
 - **Backend:** Node.js + Express.js  
@@ -53,3 +84,16 @@ It enables **farmers, distributors, retailers, and consumers** to interact throu
 ```bash
 git clone https://github.com/S-SamarthBhatt-B/AgriChain.git
 cd AgriChain
+```
+
+---
+
+## 🔮 Future Enhancements  
+
+- 📱 **Frontend Development** – Build a complete UI using **TailwindCSS + React** for better usability.  
+- 📲 **Mobile Application** – A farmer-friendly Android/iOS app for crop registration & tracking.  
+- 📊 **AI Integration** – Use AI/ML for **price prediction, demand forecasting, and yield analysis**.  
+- 📑 **QR to PDF Generator** – Generate PDF receipts/reports embedded with product **QR codes** for consumers and retailers.  
+- 🌐 **IoT Integration** – Connect IoT devices for **real-time monitoring of storage, transport, and environmental conditions**.  
+- 🔐 **Role-based Authentication** – Enhanced security with **separate dashboards** for farmers, distributors, retailers, and consumers.  
+- ☁️ **Cloud Scalability** – Scale backend on AWS/GCP for **high availability and global access**.  
