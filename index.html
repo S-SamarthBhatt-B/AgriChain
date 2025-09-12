@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTrace - Supply Chain Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="container">
+        <h1>🌱 AgriTrace</h1>
+        <h2>Supply Chain Tracker</h2>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required placeholder="Enter your username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            
+            <div class="form-group">
+                <label for="role">Select Role</label>
+                <select id="role" required>
+                    <option value="">Choose your role...</option>
+                    <option value="farmer">🚜 Farmer</option>
+                    <option value="distributor">🚛 Distributor</option>
+                    <option value="retailer">🏪 Retailer</option>
+                    <option value="consumer">👤 Consumer</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+    </div>
+
+    <!-- FARMER DASHBOARD -->
+    <div id="farmerDashboard" class="container dashboard-container hidden">
+        <!-- Navigation bar for farmers -->
+        <nav class="navbar">
+            <div class="nav-brand">🌱 AgriTrace - Farmer</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" onclick="showFarmerHome()">Home</a>
+                <a href="#" class="nav-link" onclick="showRegisterProduce()">Register Produce</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Farmer home screen -->
+        <div id="farmerHome">
+            <h2>Welcome, Farmer! 🚜</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Register New Produce</h3>
+                    <p>Add new crops to the supply chain tracking system.</p>
+                    <button class="btn btn-small" onclick="showRegisterProduce()">Register Produce</button>
+                </div>
+                <div class="card">
+                    <h3>Your Submissions</h3>
+                    <div id="farmerSubmissions">
+                        <p>No submissions yet. Register your first produce!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register new produce form -->
+        <div id="registerProduce" class="hidden">
+            <h2>Register New Produce</h2>
+            <form id="produceForm">
+                <div class="form-group">
+                    <label for="produceName">Produce Name</label>
+                    <input type="text" id="produceName" required placeholder="e.g., Organic Tomatoes">
+                </div>
+                
+                <div class="form-group">
+                    <label for="origin">Farm Origin</label>
+                    <input type="text" id="origin" required placeholder="e.g., Green Valley Farm, California">
+                </div>
+                
+                <div class="form-group">
+                    <label for="harvestDate">Harvest Date</label>
+                    <input type="date" id="harvestDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity (kg)</label>
+                    <input type="number" id="quantity" required placeholder="e.g., 500">
+                </div>
+                
+                <div class="form-group">
+                    <label for="details">Additional Details</label>
+                    <textarea id="details" rows="3" placeholder="Organic certification, growing conditions, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Register Produce</button>
+                <button type="button" class="btn btn-secondary" onclick="showFarmerHome()">Back to Home</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- DISTRIBUTOR DASHBOARD -->
+    <div id="distributorDashboard" class="container dashboard-container hidden">
+        <!-- Navigation bar for distributors -->
+        <nav class="navbar">
+            <div class="nav-brand">🚛 AgriTrace - Distributor</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" onclick="showDistributorHome()">Home</a>
+                <a href="#" class="nav-link" onclick="showUpdateSupplyChain()">Update Supply Chain</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Distributor home screen -->
+        <div id="distributorHome">
+            <h2>Welcome, Distributor! 🚛</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Update Supply Chain</h3>
+                    <p>Record ownership transfers and logistics updates.</p>
+                    <button class="btn btn-small" onclick="showUpdateSupplyChain()">Update Chain</button>
+                </div>
+                <div class="card">
+                    <h3>Recent Updates</h3>
+                    <div id="distributorUpdates">
+                        <p>No updates yet. Start tracking supply chain events!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supply chain update form -->
+        <div id="updateSupplyChain" class="hidden">
+            <h2>Update Supply Chain Event</h2>
+            <form id="supplyChainForm">
+                <div class="form-group">
+                    <label for="batchId">Batch ID</label>
+                    <input type="text" id="batchId" required placeholder="e.g., BATCH-001">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventType">Event Type</label>
+                    <select id="eventType" required>
+                        <option value="">Select event type...</option>
+                        <option value="received">Received from Farmer</option>
+                        <option value="processed">Processed/Packaged</option>
+                        <option value="shipped">Shipped to Retailer</option>
+                        <option value="transferred">Ownership Transferred</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Current Location</label>
+                    <input type="text" id="location" required placeholder="e.g., Distribution Center, Chicago">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDetails">Event Details</label>
+                    <textarea id="eventDetails" rows="3" placeholder="Temperature conditions, handling notes, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Update Supply Chain</button>
+                <button type="button" class="btn btn-secondary" onclick="showDistributorHome()">Back to Home</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RETAILER DASHBOARD -->
+    <div id="retailerDashboard" class="container dashboard-container hidden">
+        <!-- Navigation bar for retailers -->
+        <nav class="navbar">
+            <div class="nav-brand">🏪 AgriTrace - Retailer</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" onclick="showRetailerHome()">Home</a>
+                <a href="#" class="nav-link" onclick="showMarkAvailable()">Mark Available</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Retailer home screen -->
+        <div id="retailerHome">
+            <h2>Welcome, Retailer! 🏪</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Mark Produce Available</h3>
+                    <p>Update inventory and mark products as available in store.</p>
+                    <button class="btn btn-small" onclick="showMarkAvailable()">Mark Available</button>
+                </div>
+                <div class="card">
+                    <h3>Store Inventory</h3>
+                    <div id="retailerInventory">
+                        <p>No items in inventory yet. Start adding products!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mark produce available form -->
+        <div id="markAvailable" class="hidden">
+            <h2>Mark Produce as Available</h2>
+            <form id="availableForm">
+                <div class="form-group">
+                    <label for="storeBatchId">Batch ID</label>
+                    <input type="text" id="storeBatchId" required placeholder="e.g., BATCH-001">
+                </div>
+                
+                <div class="form-group">
+                    <label for="storeName">Store Name</label>
+                    <input type="text" id="storeName" required placeholder="e.g., Fresh Market Downtown">
+                </div>
+                
+                <div class="form-group">
+                    <label for="shelfLocation">Shelf Location</label>
+                    <input type="text" id="shelfLocation" required placeholder="e.g., Aisle 3, Organic Section">
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price per kg ($)</label>
+                    <input type="number" id="price" step="0.01" required placeholder="e.g., 4.99">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiryDate">Best Before Date</label>
+                    <input type="date" id="expiryDate" required>
+                </div>
+                
+                <button type="submit" class="btn">Mark as Available</button>
+                <button type="button" class="btn btn-secondary" onclick="showRetailerHome()">Back to Home</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONSUMER DASHBOARD -->
+    <div id="consumerDashboard" class="container dashboard-container hidden">
+        <!-- Navigation bar for consumers -->
+        <nav class="navbar">
+            <div class="nav-brand">👤 AgriTrace - Consumer</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" onclick="showConsumerHome()">Home</a>
+                <a href="#" class="nav-link" onclick="showScanQR()">Scan Product</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Consumer home screen -->
+        <div id="consumerHome">
+            <h2>Welcome, Consumer! 👤</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Scan QR Code</h3>
+                    <p>Scan or enter a product QR code to see its complete journey.</p>
+                    <button class="btn btn-small" onclick="showScanQR()">Scan Product</button>
+                </div>
+                <div class="card">
+                    <h3>Generate Sample QR</h3>
+                    <p>Generate a sample QR code for testing.</p>
+                    <button class="btn btn-small" onclick="generateSampleQR()">Generate QR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR scanning section -->
+        <div id="scanQR" class="hidden">
+            <h2>Scan Product QR Code</h2>
+            <form id="scanForm">
+                <div class="form-group">
+                    <label for="qrInput">Enter Batch ID or QR Code</label>
+                    <input type="text" id="qrInput" required placeholder="e.g., BATCH-001 or scan QR code">
+                </div>
+                
+                <button type="submit" class="btn">Track Product</button>
+                <button type="button" class="btn btn-secondary" onclick="showConsumerHome()">Back to Home</button>
+            </form>
+            
+            <!-- Product history will appear here -->
+            <div id="productHistory" class="hidden">
+                <h3>Product Journey 📍</h3>
+                <div id="historyContent"></div>
+            </div>
+        </div>
+
+        <!-- QR code generator -->
+        <div id="qrGenerator" class="hidden">
+            <h2>Sample QR Code Generator</h2>
+            <div class="qr-display">
+                <div class="qr-code" id="generatedQR">
+                    QR Code will appear here
+                </div>
+                <p><strong>Batch ID:</strong> <span id="generatedBatchId"></span></p>
+                <button class="btn btn-small" onclick="generateSampleQR()">Generate New QR</button>
+                <button class="btn btn-secondary btn-small" onclick="showConsumerHome()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d8ca17254659f0',t:'MTc1NzYxMDc0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
