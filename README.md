@@ -7,6 +7,19 @@
 
 ---
 
+## 📑 Table of Contents
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Workflow](#-project-workflow)
+- [Future Enhancements](#-future-enhancements)
+- [Contributors](#-contributors)
+- [Resources](#-resources)
+- [License](#-license)
+
+---
+
 ## 📌 Overview  
 **AgriChain** is a **blockchain-powered supply chain solution** that ensures **transparency, traceability, and fairness** in the agricultural ecosystem.  
 It enables **farmers, distributors, retailers, and consumers** to interact through a **secure, tamper-proof, and real-time system** ensuring fair trade, food authenticity, and efficient logistics.  
@@ -27,9 +40,9 @@ It enables **farmers, distributors, retailers, and consumers** to interact throu
 
 - **Backend:** Node.js + Express.js  
 - **Database:** MongoDB  
-- **Blockchain:** Ethereum(Sepolia testnet), Solidity smart contracts using Hardhat, Ethers.js   
-- **Frontend (Future Scope):** HTML + TailwindCSS + Vanilla JS.
-- **Deployment**– AWS 
+- **Blockchain:** Ethereum (Sepolia testnet), Solidity smart contracts (Hardhat, Ethers.js)  
+- **Frontend (Future Scope):** HTML + TailwindCSS + Vanilla JS  
+- **Deployment:** AWS  
 - **Others:** QR Code Integration, REST APIs  
 
 ---
