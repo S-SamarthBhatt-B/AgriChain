@@ -232,7 +232,7 @@ function handleProduceRegistration(event) {
     console.log('New produce registered:', newProduce);
     
     // Show success message
-    showSuccessMessage('registerProduce', ✅ Produce registered successfully! Batch ID: ${batchId});
+    showSuccessMessage('registerProduce', `✅ Produce registered successfully! Batch ID: ${batchId}`);
     
     // Reset form and return to home
     document.getElementById('produceForm').reset();
