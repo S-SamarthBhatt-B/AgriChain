@@ -10,7 +10,7 @@
 ## 📑 Table of Contents
 - [Overview](#-overview)
 - [Key Features](#-key-features)
-- - [Project Workflow](#-project-workflow)
+- [Project Workflow](#-project-workflow)
 - [Tech Stack](#-tech-stack)
 - [Getting Started](#-getting-started)
 - [Future Enhancements](#-future-enhancements)
